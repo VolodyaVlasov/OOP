@@ -14,7 +14,7 @@ public abstract class AbstractBoundedStack<T> {
     public static final int PUSH_ERR = 2; // стек переполнен
 
     //конструктор
-    // public BoundedStack<T> BoundedStack(int length);
+    // public  abstract BoundedStack<T> BoundedStack(int length);
     // команды:
 
     // предусловие: стек не заполнен
