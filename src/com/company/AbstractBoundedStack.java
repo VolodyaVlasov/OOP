@@ -38,4 +38,6 @@ public abstract class AbstractBoundedStack<T> {
     public abstract int getPopStatus(); // возвращается значение POP
 
     public abstract int getPeekStatus(); // возвращается значение PEEL
+
+    public abstract int getPushStatus(); // возвращается значение PUSH
 }

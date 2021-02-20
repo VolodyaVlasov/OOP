@@ -78,4 +78,9 @@ public class BoundedStack<T> extends AbstractBoundedStack {
     public int getPeekStatus() {
         return peekStatus;
     }
+
+    @Override
+    public int getPushStatus() {
+        return pushStatus;
+    }
 }
