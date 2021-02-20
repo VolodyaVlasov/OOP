@@ -13,6 +13,8 @@ public abstract class AbstractBoundedStack<T> {
     public static final int PUSH_OK = 1;  // последняя push() добавила значение
     public static final int PUSH_ERR = 2; // стек переполнен
 
+    //конструктор
+    // public BoundedStack<T> BoundedStack(int length);
     // команды:
 
     // предусловие: стек не заполнен
