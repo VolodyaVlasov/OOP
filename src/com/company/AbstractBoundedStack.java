@@ -15,6 +15,7 @@ public abstract class AbstractBoundedStack<T> {
 
     //конструктор
     // public abstract BoundedStack<T> BoundedStack(int length);
+
     // команды:
 
     // предусловие: стек не заполнен
@@ -27,7 +28,6 @@ public abstract class AbstractBoundedStack<T> {
 
     // постусловие: из стека удалятся все значения
     public abstract void clear();
-
 
     // запросы:
 
