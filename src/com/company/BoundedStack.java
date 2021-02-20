@@ -29,7 +29,7 @@ public class BoundedStack<T> extends AbstractBoundedStack {
     @Override
     public void push(final Object value) {
         if (index < length) {
-            stack[index++] = (T) value;
+            stack[++index] = (T) value;
             pushStatus = PUSH_OK;
         } else {
             pushStatus = PUSH_ERR;
