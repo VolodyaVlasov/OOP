@@ -1,6 +1,38 @@
 package com.company;
 
 public abstract class LinkedList<T> {
+    public static final int NIL = 0;
+    public static final int OK = 1;
+    public static final int ERR = 2;
+
+    public static final int HEAD_NIL = NIL; // head еще не вызывалась
+    public static final int HEAD_OK = OK;   // курсор установленно на head
+    public static final int HEAD_ERR = ERR; // список пуст
+
+    public static final int TAIL_NIL = NIL; //t ail еще не вызывалась
+    public static final int TAIL_OK = OK;   // курсор установленно на tail
+    public static final int TAIL_ERR = ERR; // список пуст
+
+    public static final int RIGHT_NIL = NIL; // right еще не вызывалась
+    public static final int RIGHT_OK = OK;   // курсор сдвинут вправо
+    public static final int RIGHT_ERR = ERR; // список пуст или курсор указывает на хвост
+
+    public static final int PUT_RIGHT_NIL = NIL; // putRight еще не вызывалась
+    public static final int PUT_RIGHT_OK = OK;   // значение добавлено
+    public static final int PUT_RIGHT_ERR = ERR; // список пуст
+
+    public static final int PUT_LEFT_NIL = NIL; // putLeft еще не вызывалась
+    public static final int PUT_LEFT_OK = OK;   // значение добавлено
+    public static final int PUT_LEFT_ERR = ERR; // список пуст
+
+    public static final int PUT_FIND_NIL = NIL; // значение не найдено
+    public static final int PUT_FIND_OK = OK;   // курсор установлен
+    public static final int PUT_FIND_ERR = ERR; // список пуст
+
+    public static final int PUT_GET_NIL = NIL; // значение не найдено
+    public static final int PUT_GET_OK = OK;   // метод отработал успешно
+    public static final int PUT_GET_ERR = ERR; // список пуст
+
 
     //команды:
 
@@ -58,12 +90,19 @@ public abstract class LinkedList<T> {
 
     public abstract void isValue();
 
+    // дополнительные запросы:
     public abstract int getHeadStatus();
+
     public abstract int getTailStatus();
+
     public abstract int getRightStatus();
+
     public abstract int getPutRightStatus();
+
     public abstract int getPutLeftStatus();
+
     public abstract int getFindStatus();
+
     public abstract int getGetStatus();
 
 }
