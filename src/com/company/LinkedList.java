@@ -6,11 +6,11 @@ public abstract class LinkedList<T> {
     public static final int ERR = 2;
 
     public static final int HEAD_NIL = NIL; // head еще не вызывалась
-    public static final int HEAD_OK = OK;   // курсор установленно на head
+    public static final int HEAD_OK = OK;   // курсор установлен на head
     public static final int HEAD_ERR = ERR; // список пуст
 
-    public static final int TAIL_NIL = NIL; //t ail еще не вызывалась
-    public static final int TAIL_OK = OK;   // курсор установленно на tail
+    public static final int TAIL_NIL = NIL; // tail еще не вызывалась
+    public static final int TAIL_OK = OK;   // курсор установлен на tail
     public static final int TAIL_ERR = ERR; // список пуст
 
     public static final int RIGHT_NIL = NIL; // right еще не вызывалась
@@ -25,7 +25,15 @@ public abstract class LinkedList<T> {
     public static final int PUT_LEFT_OK = OK;   // значение добавлено
     public static final int PUT_LEFT_ERR = ERR; // список пуст
 
-    public static final int PUT_FIND_NIL = NIL; // значение не найдено
+    public static final int REMOVE_NIL = NIL; // remove еще не вызывалась
+    public static final int REMOVE_OK = OK;   // значение удалено
+    public static final int REMOVE_ERR = ERR; // список пуст
+
+    public static final int REPLACE_NIL = NIL; // replace еще не вызывалась
+    public static final int REPLACE_OK = OK;   // значение заменено
+    public static final int REPLACE_ERR = ERR; // список пустой
+
+    public static final int PUT_FIND_NIL = NIL; // find еще не вызывалась
     public static final int PUT_FIND_OK = OK;   // курсор установлен
     public static final int PUT_FIND_ERR = ERR; // список пуст
 
@@ -100,6 +108,10 @@ public abstract class LinkedList<T> {
     public abstract int getPutRightStatus();
 
     public abstract int getPutLeftStatus();
+
+    public abstract int getReplaceStatus();
+
+    public abstract int getRemoveStatus();
 
     public abstract int getFindStatus();
 
