@@ -38,7 +38,7 @@ public abstract class LinkedList<T> {
     public static final int PUT_GET_ERR = ERR; // список пуст
 
     //конструктор:
-    public abstract LinkedList<T> linkedList();
+    public abstract LinkedList<T> LinkedList();
 
     //команды:
 
