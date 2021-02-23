@@ -25,10 +25,6 @@ public abstract class LinkedList<T> {
     public static final int PUT_LEFT_OK = OK;   // значение добавлено
     public static final int PUT_LEFT_ERR = ERR; // список пуст
 
-    public static final int REMOVE_NIL = NIL; // remove еще не вызывалась
-    public static final int REMOVE_OK = OK;   // значение удалено
-    public static final int REMOVE_ERR = ERR; // список пуст
-
     public static final int REPLACE_NIL = NIL; // replace еще не вызывалась
     public static final int REPLACE_OK = OK;   // значение заменено
     public static final int REPLACE_ERR = ERR; // список пустой
@@ -37,7 +33,7 @@ public abstract class LinkedList<T> {
     public static final int PUT_FIND_OK = OK;   // курсор установлен
     public static final int PUT_FIND_ERR = ERR; // список пуст
 
-    public static final int PUT_GET_NIL = NIL; // значение не найдено
+    public static final int PUT_GET_NIL = NIL; // get еще не вызывалась
     public static final int PUT_GET_OK = OK;   // метод отработал успешно
     public static final int PUT_GET_ERR = ERR; // список пуст
 
@@ -113,10 +109,7 @@ public abstract class LinkedList<T> {
 
     public abstract int getReplaceStatus();
 
-    public abstract int getRemoveStatus();
-
     public abstract int getFindStatus();
 
     public abstract int getGetStatus();
-
 }
