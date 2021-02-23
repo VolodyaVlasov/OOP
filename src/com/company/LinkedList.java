@@ -31,7 +31,7 @@ public abstract class LinkedList<T> {
 
     public static final int PUT_FIND_NIL = NIL; // find еще не вызывалась
     public static final int PUT_FIND_OK = OK;   // курсор установлен
-    public static final int PUT_FIND_ERR = ERR; // список пуст
+    public static final int PUT_FIND_ERR = ERR; // узел не найден
 
     public static final int PUT_GET_NIL = NIL; // get еще не вызывалась
     public static final int PUT_GET_OK = OK;   // метод отработал успешно
