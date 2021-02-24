@@ -90,15 +90,15 @@ public abstract class AbstractLinkedList<T> {
     //запросы:
 
     // предусловие: список не пустой
-    public abstract void get();
+    public abstract T get();
 
-    public abstract void size();
+    public abstract int size();
 
-    public abstract void isHead();
+    public abstract boolean isHead();
 
-    public abstract void isTail();
+    public abstract boolean isTail();
 
-    public abstract void isValue();
+    public abstract boolean isValue();
 
     // дополнительные запросы:
     public abstract int getHeadStatus();
