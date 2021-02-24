@@ -35,6 +35,7 @@ public class ParentList<T> {
         getStatus = NIL;
     }
 
+    //команды
     public void head() {
         if (firstInList == null) {
             headStatus = ERR;
@@ -96,10 +97,12 @@ public class ParentList<T> {
 
     public void remove() {
         if (cursor != null) {
-            Node<T> temp = cursor.right == null ? cursor.left : cursor.right;
+            Node<T> temp;
             if (cursor.right != null) {
+                temp = cursor.right;
                 cursor.right.left = cursor.left;
             } else {
+                temp = cursor.left;
                 lastInList = cursor.left;
             }
             if (cursor.left != null) {
@@ -124,12 +127,11 @@ public class ParentList<T> {
     public void addTail(T value) {
         Node<T> node = new Node<>(value, lastInList, null);
         if (lastInList == null) {
-            lastInList = node;
             firstInList = node;
         } else {
             lastInList.right = node;
-            lastInList = node;
         }
+        lastInList = node;
         size++;
     }
 
@@ -178,6 +180,7 @@ public class ParentList<T> {
         }
     }
 
+    //Запросы
     public T get() {
         T value;
         if (cursor != null) {
@@ -206,6 +209,7 @@ public class ParentList<T> {
         return cursor != null;
     }
 
+    //Вспомогательные запросы
     public int getHeadStatus() {
         return headStatus;
     }
