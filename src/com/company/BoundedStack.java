@@ -9,12 +9,7 @@ public class BoundedStack<T> extends AbstractBoundedStack {
     private int pushStatus;
 
     BoundedStack() {
-        length = 32;
-        stack = (T[]) new Object[length];
-        index = -1;
-        peekStatus = PEEK_NIL;
-        popStatus = POP_NIL;
-        pushStatus = PUSH_NIL;
+        this(32);
     }
 
     BoundedStack(final int length) {
