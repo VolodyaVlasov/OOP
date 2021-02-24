@@ -128,6 +128,7 @@ public class ParentList<T> {
             firstInList = node;
         } else {
             lastInList.right = node;
+            lastInList = node;
         }
         size++;
     }
