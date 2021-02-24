@@ -5,19 +5,19 @@ public class ParentList<T> {
     public static final int OK = 1;
     public static final int ERR = 2;
 
-    private Node<T> firstInList;
-    private Node<T> lastInList;
-    private Node<T> cursor;
-    private int size;
-    private int headStatus;
-    private int tailStatus;
-    private int rightStatus;
-    private int putRightStatus;
-    private int putLeftStatus;
-    private int removeStatus;
-    private int replaceStatus;
-    private int findStatus;
-    private int getStatus;
+    protected Node<T> firstInList;
+    protected Node<T> lastInList;
+    protected Node<T> cursor;
+    protected int size;
+    protected int headStatus;
+    protected int tailStatus;
+    protected int rightStatus;
+    protected int putRightStatus;
+    protected int putLeftStatus;
+    protected int removeStatus;
+    protected int replaceStatus;
+    protected int findStatus;
+    protected int getStatus;
 
     public ParentList() {
         firstInList = null;
@@ -242,7 +242,7 @@ public class ParentList<T> {
     }
 
 
-    private static class Node<T> {
+    protected static class Node<T> {
         T value;
         Node<T> left;
         Node<T> right;
