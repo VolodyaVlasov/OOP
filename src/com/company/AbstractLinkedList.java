@@ -1,6 +1,6 @@
 package com.company;
 
-public abstract class LinkedList<T> {
+public abstract class AbstractLinkedList<T> {
     public static final int NIL = 0;
     public static final int OK = 1;
     public static final int ERR = 2;
@@ -42,7 +42,7 @@ public abstract class LinkedList<T> {
     public static final int PUT_GET_ERR = ERR; // список пуст
 
     //конструктор:
-    public abstract LinkedList<T> LinkedList();
+    public abstract AbstractLinkedList<T> AbstractLinkedList();
 
     //команды:
 
