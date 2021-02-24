@@ -29,6 +29,10 @@ public abstract class LinkedList<T> {
     public static final int REPLACE_OK = OK;   // значение заменено
     public static final int REPLACE_ERR = ERR; // список пустой
 
+    public static final int REMOVE_NIL = NIL; // remove еще не вызывалась
+    public static final int REMOVE_OK = OK;   // значение удалено
+    public static final int REMOVE_ERR = ERR; // список пустой
+
     public static final int PUT_FIND_NIL = NIL; // find еще не вызывалась
     public static final int PUT_FIND_OK = OK;   // курсор установлен
     public static final int PUT_FIND_ERR = ERR; // узел не найден
@@ -62,6 +66,7 @@ public abstract class LinkedList<T> {
     // постусловие: слева от курсора добавленно новое значение
     public abstract void putLeft(T value);
 
+    //предусловие: список не пустой
     // постусловие: значение на которое указывает курсор удалено,
     // постусловие: курсор сместиться на правый узел, если его нет на левый
     public abstract void remove();
@@ -108,6 +113,8 @@ public abstract class LinkedList<T> {
     public abstract int getPutLeftStatus();
 
     public abstract int getReplaceStatus();
+
+    public abstract int getRemoveStatus();
 
     public abstract int getFindStatus();
 
