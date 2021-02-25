@@ -1,6 +1,6 @@
 package com.company;
 
-public class BoundedStack<T> extends AbstractBoundedStack {
+public class BoundedStack<T> extends AbstractBoundedStack<T> {
     private final int length;
     private T[] stack;
     private int index;
@@ -12,7 +12,7 @@ public class BoundedStack<T> extends AbstractBoundedStack {
         this(32);
     }
 
-    BoundedStack(final int length) {
+    BoundedStack(int length) {
         this.length = length;
         stack = (T[]) new Object[length];
         index = -1;

@@ -11,10 +11,6 @@ public abstract class AbstractQueue<T> {
     public static final int PEEK_OK = OK;  // последняя peek() вернула корректное значение
     public static final int PEEK_ERR = ERR; // очередь пустая
 
-    // конструктор
-    public AbstractQueue() {
-    }
-
     // команды:
 
     // постусловие: элемент добавлен в конец очереди

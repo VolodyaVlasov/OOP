@@ -20,9 +20,6 @@ public abstract class AbstractDynArray<T> {
     public static final int GET_BY_INDEX_OK = OK;   // метод вернет значение по индексу
     public static final int GET_BY_INDEX_ERR = ERR; // индекс за пределами массива
 
-    //конструктор
-    public AbstractDynArray(){}
-
     //Команды
 
     //Предусловие: индекс не больше  размера массива,

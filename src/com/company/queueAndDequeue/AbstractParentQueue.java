@@ -11,10 +11,6 @@ public abstract class AbstractParentQueue<T> {
     public static final int PEEK_FIRST_OK = OK;  // последняя peekFirst вернула корректное значение
     public static final int PEEK_FIRST_ERR = ERR; // очередь пустая
 
-    // конструктор
-    public AbstractParentQueue() {
-    }
-
     // команды:
 
     // постусловие: элемент добавлен в конец очереди
