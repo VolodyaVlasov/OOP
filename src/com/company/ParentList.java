@@ -63,7 +63,7 @@ public class ParentList<T> {
         }
     }
 
-    public void putRight(T value) {
+    public void putRight(final T value) {
         if (cursor != null) {
             Node<T> node = new Node<>(value, cursor, cursor.right);
             cursor.right = node;
@@ -79,7 +79,7 @@ public class ParentList<T> {
         }
     }
 
-    public void putLeft(T value) {
+    public void putLeft(final T value) {
         if (cursor != null) {
             Node<T> node = new Node<>(value, cursor.left, cursor);
             cursor.left = node;
@@ -124,7 +124,7 @@ public class ParentList<T> {
         size = 0;
     }
 
-    public void addTail(T value) {
+    public void addTail(final T value) {
         Node<T> node = new Node<>(value, lastInList, null);
         if (lastInList == null) {
             firstInList = node;
@@ -135,7 +135,7 @@ public class ParentList<T> {
         size++;
     }
 
-    public void replace(T value) {
+    public void replace(final T value) {
         if (cursor != null) {
             cursor.value = value;
             replaceStatus = OK;
@@ -144,7 +144,7 @@ public class ParentList<T> {
         }
     }
 
-    public void find(T value) {
+    public void find(final T value) {
         Node<T> node = firstInList;
         boolean status = false;
         if (value == null) {
@@ -172,7 +172,7 @@ public class ParentList<T> {
         }
     }
 
-    public void removeAll(T value) {
+    public void removeAll(final T value) {
         find(value);
         while (findStatus == OK) {
             remove();
