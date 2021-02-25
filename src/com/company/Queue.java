@@ -11,8 +11,8 @@ public class Queue<T> extends AbstractQueue<T> {
     public Queue() {
         size = 0;
         queue = new LinkedList<>();
-        popStatus = 0;
-        peekStatus = 0;
+        popStatus = NIL;
+        peekStatus = NIL;
     }
 
     @Override
