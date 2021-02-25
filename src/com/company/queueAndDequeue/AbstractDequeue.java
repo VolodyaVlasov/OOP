@@ -7,8 +7,6 @@ public abstract class AbstractDequeue<T> extends AbstractParentQueue<T> {
     public static final int PEEK_LAST_OK = OK;  // последняя peekLast вернула корректное значение
     public static final int PEEK_LAST_ERR = ERR; // очередь пустая
 
-
-
     //конструктор:
     public AbstractDequeue(){}
 
