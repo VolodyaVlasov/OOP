@@ -41,7 +41,6 @@ public abstract class AbstractDynArray<T> {
 
     public abstract int size();
 
-    //Предусловие: элемент имеется в массиве
     public abstract int find(T value);
 
     public abstract T getByIndex(int index);
