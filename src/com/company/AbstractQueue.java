@@ -12,7 +12,8 @@ public abstract class AbstractQueue<T> {
     public static final int PEEK_ERR = ERR; // очередь пустая
 
     // конструктор
-    //public abstract AbstractDynArray<T> AbstractQueue();
+    public AbstractQueue() {
+    }
 
     // команды:
 
