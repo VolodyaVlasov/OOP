@@ -12,7 +12,6 @@ public class DynArray<T> extends AbstractDynArray<T> {
     private int findStatus;
     private int getByIndexStatus;
 
-
     public DynArray() {
         this(16);
     }
