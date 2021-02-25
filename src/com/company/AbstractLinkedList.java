@@ -42,7 +42,7 @@ public abstract class AbstractLinkedList<T> {
     public static final int PUT_GET_ERR = ERR; // список пуст
 
     //конструктор:
-    public abstract AbstractLinkedList<T> AbstractLinkedList();
+    public AbstractLinkedList(){}
 
     //команды:
 

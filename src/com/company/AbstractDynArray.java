@@ -21,7 +21,7 @@ public abstract class AbstractDynArray<T> {
     public static final int GET_BY_INDEX_ERR = ERR; // индекс за пределами массива
 
     //конструктор
-    //public AbstractDynArray<T> AbstractDynArray();
+    public AbstractDynArray(){}
 
     //Команды
 
