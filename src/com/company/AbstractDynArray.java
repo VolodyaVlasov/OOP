@@ -44,7 +44,6 @@ public abstract class AbstractDynArray<T> {
     //Предусловие: элемент имеется в массиве
     public abstract int find(T value);
 
-    //Предусловие: индекс не находится за пределами массива
     public abstract T getByIndex(int index);
 
     //Дополнительные запросы
