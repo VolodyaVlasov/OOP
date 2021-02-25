@@ -11,7 +11,8 @@ public class ParentQueue<T> extends AbstractParentQueue<T> {
     public ParentQueue() {
         size = 0;
         storage = new LinkedList<>();
-
+        popFirstStatus = NIL;
+        peekFirstStatus = NIL;
     }
 
 
@@ -35,7 +36,7 @@ public class ParentQueue<T> extends AbstractParentQueue<T> {
     @Override
     public T peekFirst() {
         T value;
-        if(size > 0) {
+        if (size > 0) {
             value = storage.getFirst();
             peekFirstStatus = OK;
         } else {
