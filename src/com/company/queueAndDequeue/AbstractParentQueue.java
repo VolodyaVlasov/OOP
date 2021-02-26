@@ -19,7 +19,6 @@ public abstract class AbstractParentQueue<T> {
 
     // дополнительные запросы
     public abstract int getPopFirstStatus();
-
     public abstract int getPeekFirstStatus();
 
 }
