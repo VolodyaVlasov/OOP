@@ -8,6 +8,8 @@ public abstract class AbstractHashTable<T> {
     public static final int ADD_OK = OK;  // значение добавлено
     public static final int ADD_ERR = ERR; // значение не добавлено
 
+    public static final int REMOVE_OK = OK;  // значение удалено
+    public static final int REMOVE_ERR = ERR; // значение отсутствует
     //команды:
 
     //предусловие: для элемента найдено место
@@ -25,4 +27,6 @@ public abstract class AbstractHashTable<T> {
 
     //дополнительные запросы:
     public abstract int getAddStatus();
+
+    public abstract int getRemoveStatus();
 }
