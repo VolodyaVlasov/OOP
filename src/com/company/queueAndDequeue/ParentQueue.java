@@ -2,11 +2,21 @@ package com.company.queueAndDequeue;
 
 import java.util.LinkedList;
 
-public class ParentQueue<T> extends AbstractParentQueue<T> {
-    private int size;
-    private final LinkedList<T> storage;
-    private int popFirstStatus;
-    private int peekFirstStatus;
+public  class ParentQueue<T>  {
+    public static final int NIL = 0; // метод еще не вызылся
+    public static final int OK = 1;
+    public static final int ERR = 2;
+
+    public static final int POP_FIRST_OK = OK;  // последняя popFirst отработала нормально
+    public static final int POP_FIRST_ERR = ERR; // очередь пустая
+
+    public static final int PEEK_FIRST_OK = OK;  // последняя peekFirst вернула корректное значение
+    public static final int PEEK_FIRST_ERR = ERR; // очередь пустая
+
+    protected int size;
+    protected final LinkedList<T> storage;
+    protected int popFirstStatus;
+    protected int peekFirstStatus;
 
     public ParentQueue() {
         size = 0;
@@ -15,14 +25,11 @@ public class ParentQueue<T> extends AbstractParentQueue<T> {
         peekFirstStatus = NIL;
     }
 
-
-    @Override
     public void pushLast(T value) {
         storage.addLast(value);
         size++;
     }
 
-    @Override
     public void popFirst() {
         if (size > 0) {
             storage.removeFirst();
@@ -33,7 +40,6 @@ public class ParentQueue<T> extends AbstractParentQueue<T> {
         }
     }
 
-    @Override
     public T peekFirst() {
         T value;
         if (size > 0) {
@@ -46,17 +52,14 @@ public class ParentQueue<T> extends AbstractParentQueue<T> {
         return value;
     }
 
-    @Override
     public int size() {
         return size;
     }
 
-    @Override
     public int getPopFirstStatus() {
         return popFirstStatus;
     }
 
-    @Override
     public int getPeekFirstStatus() {
         return peekFirstStatus;
     }
