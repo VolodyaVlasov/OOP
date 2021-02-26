@@ -5,9 +5,9 @@ public class HashTable<T> extends AbstractHashTable<T> {
     private T[] storage;
     private int addStatus;
 
-    public HashTable(int size) {
-        this.size = size;
-        storage = (T[]) new Object[size];
+    public HashTable(int length) {
+        size = 0;
+        storage = (T[]) new Object[length];
     }
 
     @Override
@@ -16,6 +16,7 @@ public class HashTable<T> extends AbstractHashTable<T> {
         if (storage[index] == null) {
             storage[index] = value;
             addStatus = OK;
+            size++;
         } else {
             addStatus = ERR;
         }
@@ -26,6 +27,7 @@ public class HashTable<T> extends AbstractHashTable<T> {
         int index = find(value);
         if (storage[index] != null && storage[index].equals(value)) {
             storage[index] = null;
+            size--;
         }
     }
 
