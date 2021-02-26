@@ -4,10 +4,13 @@ public class HashTable<T> extends AbstractHashTable<T> {
     private int size;
     private T[] storage;
     private int addStatus;
+    private int removeStatus;
 
     public HashTable(int length) {
         size = 0;
         storage = (T[]) new Object[length];
+        addStatus = NIL;
+        removeStatus = NIL;
     }
 
     @Override
@@ -45,6 +48,9 @@ public class HashTable<T> extends AbstractHashTable<T> {
     public int getAddStatus() {
         return addStatus;
     }
+
+    @Override
+    public int getRemoveStatus() {return removeStatus;}
 
     private int find(T value) {
         return value.hashCode() % size;
