@@ -21,12 +21,29 @@ public class NativeDictionary<T> extends AbstractNativeDictionary<T> {
 
     @Override
     public void put(String key, T value) {
-        int index = findBasket(key);
-        storage[index] = new Node<>(key, value, storage[index]);
         size++;
         if (size > length) {
             increaseArray();
         }
+        int index = findBasket(key);
+        Node<T> start = storage[index];
+        Node<T> prev = null;
+        while (start != null) {
+            if (start.key.equals(key)) {
+                break;
+            }
+            prev = start;
+            start = start.next;
+        }
+        if (start == null) {
+            start = new Node<>(key, value, null);
+            if (prev != null) {
+                prev.next = start;
+            }
+        } else {
+            start.value = value;
+        }
+
     }
 
     @Override
