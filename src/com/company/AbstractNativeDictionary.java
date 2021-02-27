@@ -1,7 +1,7 @@
 package com.company;
 
 public abstract class AbstractNativeDictionary<T> {
-    public static final int NIL = 0; // метод еще не вызылся
+    public static final int NIL = 0; // метод еще не вызывался
     public static final int OK = 1;
     public static final int ERR = 2;
 
