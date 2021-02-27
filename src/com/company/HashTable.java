@@ -53,6 +53,6 @@ public class HashTable<T> extends AbstractHashTable<T> {
     public int getRemoveStatus() {return removeStatus;}
 
     private int find(T value) {
-        return value.hashCode() % size;
+        return value.hashCode() % storage.length;
     }
 }
