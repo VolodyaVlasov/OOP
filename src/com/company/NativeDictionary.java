@@ -14,78 +14,74 @@ public class NativeDictionary<T> extends AbstractNativeDictionary<T> {
     public NativeDictionary(int length) {
         size = 0;
         this.length = length;
-        storage = (Node<T>[]) new Object[length];
-        removeStatus = 0;
-        getStatus = 0;
+        storage = new Node[length];
+        removeStatus = NIL;
+        getStatus = NIL;
     }
 
     @Override
     public void put(String key, T value) {
         int index = findBasket(key);
-        Node<T> node = new Node<>(key, value, storage[index]);
+        storage[index] = new Node<>(key, value, storage[index]);
         size++;
-        if (size == length) {
+        if (size > length) {
             increaseArray();
         }
     }
 
     @Override
     public void remove(String key) {
-        boolean status = false;
         int index = findBasket(key);
-        if (storage[index].key.equals(key)) {
-            storage[index] = storage[index].next;
-            status = true;
-        } else {
-            Node<T> start = storage[index].next;
-            Node<T> temp = storage[index];
-            while (start != null) {
-                if (start.key.equals(key)) {
-                    temp.next = start.next;
-                    status = true;
-                    break;
+        boolean status = false;
+        if (storage[index] != null) {
+            if (storage[index].key.equals(key)) {
+                storage[index] = storage[index].next;
+                size--;
+                status = true;
+            } else {
+                Node<T> start = storage[index].next;
+                Node<T> prev = storage[index];
+                while (start != null) {
+                    if (start.key.equals(key)) {
+                        prev.next = start.next;
+                        size--;
+                        status = true;
+                        break;
+                    }
+                    prev = start;
+                    start = start.next;
                 }
-                temp = start;
-                start = start.next;
             }
         }
-        if (status) {
-            size--;
-            removeStatus = OK;
-        } else {
-            removeStatus = ERR;
-        }
+        removeStatus = status ? OK : ERR;
     }
 
     @Override
     public T get(String key) {
-        T value = null;
         int index = findBasket(key);
         Node<T> start = storage[index];
         while (start != null) {
             if (start.key.equals(key)) {
-                value = start.value;
-                break;
+                getStatus = OK;
+                return start.value;
             }
             start = start.next;
         }
-        getStatus = value == null ? ERR : OK;
-        return value;
+        getStatus = ERR;
+        return null;
     }
 
     @Override
     public boolean isKey(String key) {
-        boolean answer = false;
         int index = findBasket(key);
         Node<T> start = storage[index];
         while (start != null) {
             if (start.key.equals(key)) {
-                answer = true;
-                break;
+                return true;
             }
             start = start.next;
         }
-        return answer;
+        return false;
     }
 
     @Override
@@ -103,19 +99,21 @@ public class NativeDictionary<T> extends AbstractNativeDictionary<T> {
         return getStatus;
     }
 
-    private int findBasket(String key) {
+    public int findBasket(String key) {
         return key.hashCode() % length;
     }
 
     private void increaseArray() {
         length = length * 3 / 2 + 1;
         Node<T>[] temp = storage;
-        storage = (Node<T>[]) new Object[length];
-        for (int i = 0; i < temp.length; i++) {
-            Node<T> start = temp[i];
-            while (start != null) {
-                put(start.key, start.value);
-                start = start.next;
+        storage = new Node[length];
+        for (Node<T> node : temp) {
+            if (node != null) {
+                Node<T> start = node;
+                while (start != null) {
+                    put(start.key, start.value);
+                    start = start.next;
+                }
             }
         }
     }
