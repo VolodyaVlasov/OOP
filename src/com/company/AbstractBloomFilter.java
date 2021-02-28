@@ -4,7 +4,6 @@ public abstract class AbstractBloomFilter<T> {
     //конструктор:
     // public BloomFilter(int size);
 
-
     //команды:
 
     //постусловие: добавленно новое значение в фильтр
