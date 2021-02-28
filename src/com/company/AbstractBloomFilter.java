@@ -6,6 +6,4 @@ public abstract class AbstractBloomFilter<T> {
 
     //запросы:
     public abstract void isValue(T value);
-
-
 }
