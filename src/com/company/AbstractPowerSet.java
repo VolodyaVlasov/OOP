@@ -48,10 +48,7 @@ public abstract class AbstractPowerSet {
     public abstract PowerSet difference(PowerSet set);
 
     //предусловие: можества не пустые
-    public abstract PowerSet isSubset(PowerSet set);
-
-
-    public abstract String[] toArray();
+    public abstract boolean isSubset(PowerSet set);
 
     //дополнительные запросы:
 
