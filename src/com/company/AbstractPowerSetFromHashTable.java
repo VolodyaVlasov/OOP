@@ -1,6 +1,17 @@
 package com.company;
 
 public abstract class AbstractPowerSetFromHashTable extends AbstractHashTable<String>{
+    public static final int INTERSECTION_OK = OK;  // метод отработал корректно
+    public static final int INTERSECTION_ERR = ERR; // одно или оба из множеств пустые
+
+    public static final int UNION_OK = OK;  // метод отработал корректно
+    public static final int UNION_ERR = ERR; // одно или оба из множеств пустые
+
+    public static final int DIFFERENCE_OK = OK;  // метод отработал корректно
+    public static final int DIFFERENCE_ERR = ERR; // одно или оба из множеств пустые
+
+    public static final int IS_SUBSET_OK = OK;  // метод отработал корректно
+    public static final int IS_SUBSET_ERR = ERR; // одно или оба из множеств пустые
 
     //конструктор
     public abstract PowerSet PowerSet(int max);

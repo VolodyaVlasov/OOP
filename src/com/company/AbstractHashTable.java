@@ -10,6 +10,8 @@ public abstract class AbstractHashTable<T> {
 
     public static final int REMOVE_OK = OK;  // значение удалено
     public static final int REMOVE_ERR = ERR; // значение отсутствует
+
+
     //команды:
 
     //предусловие: для элемента найдено место
