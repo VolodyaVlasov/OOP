@@ -12,16 +12,16 @@ public abstract class AbstractPowerSet {
     public static final int REMOVE_ERR = ERR; // значение отсутствует
 
     public static final int INTERSECTION_OK = OK;  // метод отработал корректно
-    public static final int INTERSECTION_ERR = ERR; // одно из множеств пустое
+    public static final int INTERSECTION_ERR = ERR; // одно или оба из множеств пустые
 
     public static final int UNION_OK = OK;  // метод отработал корректно
-    public static final int UNION_ERR = ERR; // одно из множеств пустое
+    public static final int UNION_ERR = ERR; // одно или оба из множеств пустые
 
     public static final int DIFFERENCE_OK = OK;  // метод отработал корректно
-    public static final int DIFFERENCE_ERR = ERR; // одно из множеств пустое
+    public static final int DIFFERENCE_ERR = ERR; // одно или оба из множеств пустые
 
     public static final int IS_SUBSET_OK = OK;  // метод отработал корректно
-    public static final int IS_SUBSET_ERR = ERR; // одно из множеств пустое
+    public static final int IS_SUBSET_ERR = ERR; // одно или оба из множеств пустые
 
     //команды:
 
@@ -34,19 +34,24 @@ public abstract class AbstractPowerSet {
     public abstract void remove(String value);
 
     //запросы:
+    public abstract int size();
+
     public abstract boolean check(String value);
 
     //предусловие: можества не пустые
-    public abstract AbstractPowerSet intersection(AbstractPowerSet set);
+    public abstract PowerSet intersection(PowerSet set);
 
     //предусловие: можества не пустые
-    public abstract AbstractPowerSet union(AbstractPowerSet set);
+    public abstract PowerSet union(PowerSet set);
 
     //предусловие: можества не пустые
-    public abstract AbstractPowerSet difference(AbstractPowerSet set);
+    public abstract PowerSet difference(PowerSet set);
 
     //предусловие: можества не пустые
-    public abstract AbstractPowerSet isSubset(AbstractPowerSet set);
+    public abstract PowerSet isSubset(PowerSet set);
+
+
+    public abstract String[] toArray();
 
     //дополнительные запросы:
 
