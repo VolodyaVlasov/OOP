@@ -1,4 +1,4 @@
-package com.company.queueAndDequeue;
+package com.company;
 
 public abstract class AbstractParentQueue<T> {
     // команды:
